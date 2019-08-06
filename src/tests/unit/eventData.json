@@ -1,0 +1,10 @@
+{
+	"Records": [
+	  {
+		"Sns": {
+		  "Message": "{\"originationNumber\":\"+10000000000\",\"messageBody\":\"1\"}",
+		  "Timestamp": "2019-02-20T17:47:44.147Z"
+		}
+	  }
+	]
+  }

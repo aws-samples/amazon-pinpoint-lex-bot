@@ -1,0 +1,42 @@
+      {
+        "document": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "Logs",
+              "Effect": "Allow",
+              "Action": [
+                "logs:CreateLogStream",
+                "logs:CreateLogGroup",
+                "logs:PutLogEvents"
+              ],
+              "Resource": [
+                "arn:aws:logs:*:*:*"
+              ]
+            },
+            {
+              "Sid": "Pinpoint",
+              "Effect": "Allow",
+              "Action": [
+                "mobiletargeting:SendMessages"
+              ],
+              "Resource": [
+                "arn:aws:mobiletargeting:YOURREGION:YOURACCOUNTID:apps/YOURPROJECTORAPPID/endpoints/*"
+              ]
+            },
+            {
+              "Sid": "Lex",
+              "Effect": "Allow",
+              "Action": [
+                "lex:PostContent",
+                "lex:PostText"
+              ],
+              "Resource": [
+                "arn:aws:lex:YOURREGION:YOURACCOUNTID:bot/YOURBOTNAME"
+              ]
+            }
+          ]
+        },
+        "name": "PinpointLexFunctionRole",
+        "type": "managed"
+      }

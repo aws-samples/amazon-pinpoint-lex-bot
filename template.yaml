@@ -1,0 +1,75 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Pinpoint-Lex-Bot AWS Lambda function.
+Resources:
+  PinpointLexFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: app.handler
+      Runtime: nodejs8.10
+      CodeUri: src/
+      Description: Pinpoint-Lex-Bot AWS Lambda function.
+      MemorySize: 128
+      Timeout: 10
+      Role: !GetAtt PinpointLexFunctionIamRole.Arn
+      Events:
+        SNS1:
+          Type: SNS
+          Properties:
+            Topic:
+              Ref: SNSTopic1
+      Environment:
+        Variables:
+          PinpointApplicationId: YOURPINPOINTPROJECTID
+          BotName: YOURBOTNAME
+          BotAlias: YOURBOTALIAS
+  SNSTopic1:
+    Type: 'AWS::SNS::Topic'
+
+  PinpointLexFunctionIamRole: 
+    Type: AWS::IAM::Role
+    Properties: 
+      RoleName: PinpointLexFunctionRole
+      AssumeRolePolicyDocument: 
+        Version: '2012-10-17'
+        Statement: 
+        - Effect: Allow
+          Principal: 
+            Service: lambda.amazonaws.com
+          Action: 
+          - sts:AssumeRole
+      Path: '/'
+      Policies: 
+      - PolicyName: Logs
+        PolicyDocument: 
+          Statement: 
+          - Effect: Allow
+            Action: 
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+            Resource: arn:aws:logs:*:*:*
+      - PolicyName: Pinpoint
+        PolicyDocument: 
+          Statement: 
+          - Effect: Allow
+            Action: 
+            - mobiletargeting:SendMessages
+            Resource: arn:aws:mobiletargeting:YOURREGION:YOURACCOUNTID:apps/YOURPROJECTORAPPID/endpoints/*
+      - PolicyName: Lex
+        PolicyDocument: 
+          Statement: 
+          - Effect: Allow
+            Action: 
+            - lex:PostContent
+            - lex:PostText
+            Resource: arn:aws:lex:YOURREGION:YOURACCOUNTID:bot/YOURBOTNAME
+#Outputs:
+
+    PinpointLexFunction:
+      Description: "Lambda function to trigger calls"
+      Value: !GetAtt PinpointLexFunction.Arn
+
+    PinpointLexFunctionIamRole:
+      Description: "IAM Role created for this function"
+      Value: !GetAtt PinpointLexFunctionIamRole.Arn

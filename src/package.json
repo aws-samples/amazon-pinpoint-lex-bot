@@ -1,0 +1,15 @@
+{
+  "name": "amazon-pinpoint-lex-bot",
+  "version": "1.0.0",
+  "description": "Use AWS Pinpoint and AWS Lex to let your customers have two-way chats with bots via SMS.",
+  "main": "src/app.js",
+  "repository": "https://github.com/aws-samples/amazon-pinpoint-lex-bot",
+  "author": "Ilya Pupko",
+  "license": "MIT-0",
+  "dependencies": {
+    "aws-sdk": "^2.503.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  }
+}
