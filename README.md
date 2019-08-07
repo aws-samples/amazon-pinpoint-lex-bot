@@ -2,7 +2,7 @@
 Use Amazon Web Services (AWS) Pinpoint, Lambda, and Lex to let your customers interact with (Lex) chat-bots via 2-way SMS.
 
 ## License Summary
-This sample code and flow is made available under Open Source - MIT No Attribution License (MIT-0). See the [LICENSE](/blob/master/LICENSE) file.
+This sample code and flow is made available under Open Source - MIT No Attribution License (MIT-0). See the [LICENSE](/LICENSE) file.
 
 ### Architecture
 Upon an SMS request from the user, AWS Pinpoint publishes to AWS SNS queue. A custom AWS Lambda function detects a new event and redirects information, specifically the originating phone number and message, to Lex. Lex uses the phone number to keep context of the conversation, sends response back, and Lambda sends that response over to the customer. Once first loop completes, the customer can continue this back-and-forth, just like they would with the chat-bot in Alexa or on a website.
