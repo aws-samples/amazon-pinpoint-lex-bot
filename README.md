@@ -1,4 +1,4 @@
-## Amazon Pinpoint Call Generator
+## Amazon Pinpoint-Lex Bot
 Use Amazon Web Services (AWS) Pinpoint, Lambda, and Lex to let your customers interact with (Lex) chat-bots via 2-way SMS.
 
 ## License Summary
