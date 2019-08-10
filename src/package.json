@@ -7,7 +7,7 @@
   "author": "Ilya Pupko",
   "license": "MIT-0",
   "dependencies": {
-    "aws-sdk": "^2.503.0"
+    "aws-sdk": "^2.506.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0"
