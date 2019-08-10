@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /*
  * Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
@@ -15,18 +14,20 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
-import { LexRuntime, Pinpoint } from 'aws-sdk';
+const AWS = require('aws-sdk');
+AWS.config.update({
+    region: process.env.region
+});
+const pinpoint = new AWS.Pinpoint();
+const lex = new AWS.LexRuntime();
 
 var AppId = process.env.PinpointApplicationId;
 var BotName = process.env.BotName;
 var BotAlias = process.env.BotAlias;
 
-var pinpoint = new Pinpoint({ region: process.env.region });
-var lex = new LexRuntime({ region: process.env.region });
 
 // eslint-disable-next-line no-unused-vars
-export function handler(event, context) {
+exports.handler = (event, context)  => {
     /*
     * Event info is sent via the SNS subscription: https://console.aws.amazon.com/sns/home
     * 
