@@ -16,7 +16,7 @@ Major benefits:
 6. Customer phone number context is standard, remains linked to the phone number, allowing for pause-resume/reuse off another application (eg. website, app, etc.)
 7. Lex conversations can be easily stored and reused to enrich customer view
 
-![Architecture Diagramm](misc/architecture.png?raw=true)
+![Architecture Diagram](misc/architecture.png?raw=true)
 
 ### Prerequisites
 This flow requires that you have an AWS Account with AWS Pinpoint project and access to Lex. 
