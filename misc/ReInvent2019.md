@@ -135,9 +135,10 @@ function sendResponse(custPhone, botPhone, response) {
 }
 ```
 Remember to set:
-Key | Value
------------- | -------------
-PinpointApplicationId | The name of the Pinpoint project that you created earlier.
-BotName | The name of the Lex bot that you created earlier.
-BotAlias | Latest
-Region | The AWS Region that you created the Amazon Pinpoint project and Lex bot in.
+
+| Key  | Value |
+| ------------- | ------------- |
+| PinpointApplicationId  | The name of the Pinpoint project that you created earlier.  |
+| BotName  | The name of the Lex bot that you created earlier.  |
+| BotAlias  | Latest |
+| Region  | The AWS Region that you created the Amazon Pinpoint project and Lex bot in.  |
