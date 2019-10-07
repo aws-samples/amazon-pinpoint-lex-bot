@@ -39,6 +39,7 @@ Main files:
 ```
 
 ### Setup
+> Below is a high-level how-to, but you should feel free to follow the more expanded version of the walk-through with screenshots @ https://aws.amazon.com/blogs/messaging-and-targeting/create-an-sms-chatbox-with-amazon-pinpoint-and-lex/ 
 #### Step 1: Pinpoint
 Create the new Pinpoint project or identify one you want to reuse along with the long-code. 
 Setup two-way SMS. Take note of the SNS topic (new or existing). 
