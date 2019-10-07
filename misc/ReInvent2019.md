@@ -1,5 +1,6 @@
 ## Amazon Pinpoint-Lex Bot: ReInvent 2019
-Materials for the 2019 re:Invent Pinpoint Builder Session - Build and Deploy Your Own 2 Way Text Chatbot for re:Invent 2019
+Materials for the 2019 re:Invent Pinpoint Builder Session - Build and Deploy Your Own 2 Way Text Chatbot for re:Invent 2019.
+Use https://github.com/Mottie/GitHub-userscripts/wiki/GitHub-copy-code-snippet to quickly copy the code.
 
 ## License Summary
 This sample code and flow is made available under Open Source - MIT No Attribution License (MIT-0). See the [LICENSE](../LICENSE) file.
@@ -7,7 +8,7 @@ This sample code and flow is made available under Open Source - MIT No Attributi
 ### Setup
 > Quick setup below, but you should follow the [expanded version](https://aws.amazon.com/blogs/messaging-and-targeting/create-an-sms-chatbox-with-amazon-pinpoint-and-lex/). 
 #### Step 3: Permissions/IAM
-```json
+```JSON
       {
         "document": {
           "Version": "2012-10-17",
