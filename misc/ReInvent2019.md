@@ -43,7 +43,7 @@ This sample code and flow is made available under Open Source - MIT No Attributi
                 "lex:PostText"
               ],
               "Resource": [
-                "arn:aws:lex:YOURREGION:YOURACCOUNTID:bot/YOURBOTNAME"
+                "arn:aws:lex:YOURREGION:YOURACCOUNTID:bot:YOURBOTNAME:*"
               ]
             }
           ]
