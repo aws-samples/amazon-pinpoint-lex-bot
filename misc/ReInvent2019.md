@@ -9,48 +9,44 @@ This sample code and flow is made available under Open Source - MIT No Attributi
 > Quick setup below, but you should follow the [expanded version](https://aws.amazon.com/blogs/messaging-and-targeting/create-an-sms-chatbox-with-amazon-pinpoint-and-lex/). 
 #### Step 3: Permissions/IAM
 ```JSON
-      {
-        "document": {
-          "Version": "2012-10-17",
-          "Statement": [
-            {
-              "Sid": "Logs",
-              "Effect": "Allow",
-              "Action": [
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Logs",
+            "Effect": "Allow",
+            "Action": [
                 "logs:CreateLogStream",
                 "logs:CreateLogGroup",
                 "logs:PutLogEvents"
-              ],
-              "Resource": [
+            ],
+            "Resource": [
                 "arn:aws:logs:*:*:*"
-              ]
-            },
-            {
-              "Sid": "Pinpoint",
-              "Effect": "Allow",
-              "Action": [
+            ]
+        },
+        {
+            "Sid": "Pinpoint",
+            "Effect": "Allow",
+            "Action": [
                 "mobiletargeting:SendMessages"
-              ],
-              "Resource": [
-                "arn:aws:mobiletargeting:YOURREGION:YOURACCOUNTID:apps/YOURPROJECTORAPPID/endpoints/*"
-              ]
-            },
-            {
-              "Sid": "Lex",
-              "Effect": "Allow",
-              "Action": [
+            ],
+            "Resource": [
+                "arn:aws:mobiletargeting:YOURREGION:YOURACCOUNTID:apps/YOURPROJECTORAPPID/*"
+            ]
+        },
+        {
+            "Sid": "Lex",
+            "Effect": "Allow",
+            "Action": [
                 "lex:PostContent",
                 "lex:PostText"
-              ],
-              "Resource": [
+            ],
+            "Resource": [
                 "arn:aws:lex:YOURREGION:YOURACCOUNTID:bot:YOURBOTNAME:*"
-              ]
-            }
-          ]
-        },
-        "name": "PinpointLexFunctionRole",
-        "type": "managed"
-      }
+            ]
+        }
+    ]
+}
 ```
 #### Step 4: Lambda
 ```javascript
