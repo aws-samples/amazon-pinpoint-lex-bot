@@ -24,7 +24,7 @@ const lex = new AWS.LexRuntime();
 var AppId = process.env.PinpointApplicationId;
 var BotName = process.env.BotName;
 var BotAlias = process.env.BotAlias;
-
+var BotNumber = process.env.BotNumber;
 
 // eslint-disable-next-line no-unused-vars
 exports.handler = (event, context)  => {
@@ -34,6 +34,8 @@ exports.handler = (event, context)  => {
     * - PinpointApplicationId is your Pinpoint Project ID.
     * - BotName is your Lex Bot name.
     * - BotAlias is your Lex Bot alias (aka Lex function/flow).
+    * - BotNumber is your Pinpoint number Lex Bot should use (if you have more than one). 
+    *       Alternatively, consider checking which number customer sent the request on.
     */
     console.log('Received event: ' + event.Records[0].Sns.Message);
     var message = JSON.parse(event.Records[0].Sns.Message);
@@ -54,7 +56,7 @@ exports.handler = (event, context)  => {
         }
         else if (data != null && data.message != null) {
             console.log("Lex response: " + data.message);
-            sendResponse(originationNumber, response.response.data.message);
+            sendResponse(originationNumber, BotNumber, response.response.data.message);
         }
         else {
             console.log("Lex did not send a message back!");
@@ -62,7 +64,7 @@ exports.handler = (event, context)  => {
     });
 }
 
-function sendResponse(phone, response) {
+function sendResponse(phone, botPhone, response) {
     var paramsSMS = {
         ApplicationId: AppId,
         MessageRequest: {
@@ -74,7 +76,8 @@ function sendResponse(phone, response) {
             MessageConfiguration: {
                 SMSMessage: {
                     Body: response,
-                    MessageType: "TRANSACTIONAL"
+                    MessageType: "TRANSACTIONAL",
+                    OriginationNumber: botPhone
                 }
             }
         }
@@ -89,7 +92,7 @@ function sendResponse(phone, response) {
             console.log(data['MessageResponse']['Result']);
         }
         else {
-            console.log("Successfully sent response via SMS to " + phone);
+            console.log("Successfully sent response via SMS from " + botPhone + " to " + phone);
         }
     });
 }
