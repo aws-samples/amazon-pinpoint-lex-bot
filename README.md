@@ -29,15 +29,15 @@ Main files:
 ```bash
 .
 ├── README.MD                   <-- This instructions file
+├── template.yaml               <-- SAM template. Make sure to edit manually first!
 ├── ExecutionRole.json          <-- Sample IAM policy (also part of the SAM template). Make sure to edit manually first!
-├── src                         <-- Source code for a lambda function
+├── src                         <-- Actual source code
 │   └── app.js                  <-- Lambda function code
 │   └── Sample-AccountBot.json  <-- Sample Lex bot you can reuse for testing your flow for the fist time.
 │   └── package.json            <-- NodeJS dependencies and scripts
 │   └── tests                   <-- Unit tests
 │       └── unit
 │           └── eventData.json  <-- Sample payload that mimics the SMS received from customer (from Pinpoint via SNS). Make sure to edit manually first!
-├── template.yaml               <-- SAM template. Make sure to edit manually first!
 ```
 
 ### Setup
@@ -61,6 +61,7 @@ Remember that AWS Policies are always designed to only allow what is absolutely 
 2. Set Environment variables - these are dynamic configuration parameters that you will be able to switch/change in production.  
 * PinpointApplicationId 	The ID of the Pinpoint project that you created earlier.  
 * BotName 	The name of the Lex bot that you created earlier.  
+* BotNumber The Pinpoint number Lex Bot should use (if you have more than one). Alternatively, consider checking which number customer sent the request to first.
 * BotAlias 	Latest (or whichever alias you gave the bot)
 * Region 	The AWS Region that you created the Amazon Pinpoint project and Lex bot in.  
 3. Associate Lambda with SNS.   
