@@ -6,7 +6,7 @@ Resources:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: app.handler
-      Runtime: nodejs10.x
+      Runtime: nodejs12.x
       CodeUri: src/
       Description: Pinpoint-Lex-Bot AWS Lambda function.
       MemorySize: 128
