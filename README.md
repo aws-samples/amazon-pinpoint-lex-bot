@@ -1,6 +1,8 @@
 ## Amazon Pinpoint-Lex Bot
 Use Amazon Web Services (AWS) Pinpoint, Lambda, and Lex to let your customers interact with (Lex) chat-bots via 2-way SMS.
 
+![Sample SMS conversation screenshot](misc/Lex_chat-267x300.jpg?raw=true)
+
 With this approach you will be able to create an SMS-based chatbot using Amazon Lex and Amazon Pinpoint. Such a chatbot can help your customers schedule appointments, lookup latest account information, or most common solutions to their troubles. Note that we will be using a generic Lex bot, which means you can reuse the same bot for your other services as well, be it Web or, for example, Amazon Connect/IVR.
 
 Major benefits:

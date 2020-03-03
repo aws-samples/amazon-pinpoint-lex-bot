@@ -1,0 +1,31 @@
+{
+    "event_type": "_SMS.SUCCESS",
+    "event_timestamp": 1566423396986,
+    "arrival_timestamp": 1566423396990,
+    "event_version": "3.1",
+    "application": {
+        "app_id": "0b3ab2f3a84c4a3b345a851d96236621",
+        "sdk": {}
+    },
+    "client": {
+        "client_id": "abc2ab3url4t1adzrpjgnhw+a1g"
+    },
+    "device": {
+        "platform": {}
+    },
+    "session": {},
+    "attributes": {
+        "sender_request_id": "723af033-bf36-4f4f-9a1c-f2c73b456abc",
+        "destination_phone_number": "+19999999999",
+        "record_status": "DELIVERED",
+        "iso_country_code": "US",
+        "number_of_message_parts": "1",
+        "message_id": "tmc1g1hjjfg3k4dhia7v5tr76e7cc3v4ricg7f00",
+        "message_type": "Transactional",
+        "origination_phone_number": "+18888888888"
+    },
+    "metrics": {
+        "price_in_millicents_usd": 645
+    },
+    "awsAccountId": "12345678901"
+}
